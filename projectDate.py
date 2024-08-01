@@ -6,7 +6,7 @@ def date_function_monthly():
     while True :
         date_monthly = input("First Monthly : ")
         
-        if date_monthly ==  "January" or "March" or "May" or "July" or "August" or "October" or "Desember":
+        if date_monthly in {"January", "March", "May",  "July", "August", "October", "December"}:
             while True:
                 print("Day (1-31)")
                 date_day = input("First day : ")
@@ -15,7 +15,7 @@ def date_function_monthly():
                     break
                 else :
                     print("Try Again ")
-                    continue
+                    continue 
             break
 
         elif date_monthly ==  "February":
@@ -30,11 +30,11 @@ def date_function_monthly():
                     continue
             break
                 
-        elif date_monthly ==  "April" or "June" or "September" or  "November":
+        elif date_monthly in  {"April" , "June" , "September" ,  "November"}:
             while True:
                 print("Day (1-30)")
                 date_day = input("First day : ")
-                if 1<= int(date_day) <=31 : 
+                if 1<= int(date_day) <=30 : 
                     print(date_monthly +" " + date_day)              
                     break
                 else :
@@ -46,14 +46,11 @@ def date_function_monthly():
             print("Try Again")
             continue
 
-
-
 def date_function():
     print("Choose year (1900-2100)  ")
     while True:
          date_year = input("First Year : ")
          if 1900 <= int(date_year) <= 2100 :
-             print("First Year : " + date_year)
              print("Choose Monthly (January , Februay , March , April ,May , June ,July,August, September , October, November , December)")
              date_function_monthly()
              print(date_year)
